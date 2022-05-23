@@ -1,0 +1,31 @@
+.search-bar {
+    align-self: center;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+form > * {
+    height: 45px;
+    border-radius: 30px;
+    border: none;
+}
+
+form input#movie-search{
+    width: 80vw;
+    position: relative;
+    padding: 15px;
+    outline: none;
+}
+
+form button {
+    width: min(150px,20vw);
+    height: 45px;
+    position: absolute;
+    background-color: red;
+    color: white;
+    right: 8vw;
+    cursor: pointer;
+}
+
