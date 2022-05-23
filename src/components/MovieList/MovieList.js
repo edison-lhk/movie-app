@@ -5,7 +5,7 @@ import MovieCard from "../MovieCard/MovieCard";
 const MovieList = (props) => {
     const movieCardList = props.movies.map(movie => {
         return (
-            <MovieCard title={movie.original_title} releaseDate={movie.release_date.slice(0,4)} posterPath={movie.poster_path} />
+            <MovieCard title={movie.original_title} releaseDate={movie.release_date.slice(0,4)} posterPath={movie.poster_path} id={movie.id} key={movie.key}/>
         );
     })
 

@@ -1,17 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./MovieCard.css";
 
 const MovieCard = (props) => {
 
+    const {title, releaseDate, posterPath, id} = props;
+
     return (
-        <div className="movie-card">
-            <div className="poster">
-                <img src={`https://image.tmdb.org/t/p/w200/${props.posterPath}`} alt={props.title}/>
+        <Link to={`/movie/${id}`} state={{id}} style={{color: "white"}}>
+            <div className="movie-card">
+                <div className="poster">
+                    <img src={`https://image.tmdb.org/t/p/w200/${posterPath}`} alt={title}/>
+                </div>
+                <div className="info">
+                    <h3 className="movie-title">{title} {`(${releaseDate})`}</h3>
+                </div> 
             </div>
-            <div className="info">
-                <h3 className="movie-title">{props.title} {`(${props.releaseDate})`}</h3>
-            </div> 
-        </div>
+        </Link>
     );
 };
 

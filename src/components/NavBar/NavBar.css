@@ -14,21 +14,17 @@
     align-items: center;
     gap: 60px;
     padding: 0;
-    margin-right: 4vw;
+    margin-right: 5vw;
 }
 
 .nav-bar ul .nav-btn {
     list-style-type: none;
-}
-
-.nav-bar ul .nav-btn a {
-    text-decoration: none;
-    color: white;
     position: relative;
     font-size: 20px;
+    cursor: pointer;
 }
 
-.nav-bar ul .nav-btn a::after {
+.nav-bar ul .nav-btn::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -40,7 +36,7 @@
     transition: transform 0.35s ease;
 }
 
-.nav-bar ul .nav-btn a:hover::after {
+.nav-bar ul .nav-btn:hover::after {
     transform: scaleX(1);
 }
 

@@ -3,15 +3,18 @@ import "./SearchBar.css";
 
 const SearchBar = (props) => {
     const [movieSearch, setMovieSearch] = useState('');
-
     return (
         <div className="search-bar">
             <form onSubmit={(e) => {
                 e.preventDefault();
-                props.searchMovie(movieSearch);
-                setMovieSearch('');
+                if (movieSearch !== '') {
+                    props.searchMovie(movieSearch);
+                    setMovieSearch('');
+                } else {
+                    return;
+                }
             }}>
-                <input type="search" name="movie-search" id="movie-search" placeholder="Search for a movie, tv show, person....." value={movieSearch} onChange={(e) => setMovieSearch(e.target.value)}/>
+                <input type="search" autoComplete="off" name="movie-search" id="movie-search" placeholder="Search for a movie, tv show, person....." value={movieSearch} onChange={(e) => setMovieSearch(e.target.value)}/>
                 <button type="submit">Search</button>
             </form>
         </div>

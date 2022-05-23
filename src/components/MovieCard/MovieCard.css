@@ -1,33 +1,35 @@
 .movie-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
+    cursor: pointer;
 }
 
 .movie-card .poster {
-    position: relative;
     border-radius: 18px;
     transition: transform 0.2s ease-out;
+    height: 304px;
 }
 
-.movie-card .poster::after {
+.movie-card::after {
     content: '';
+    z-index: 1;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     opacity: 0;
     transition: opacity 0.5s ease-out;
-    cursor: pointer;
 }
 
-.movie-card .poster:hover {
+.movie-card:hover {
     transform: translateY(-5px);
 }
 
-.movie-card .poster:hover::after {
+.movie-card:hover::after {
     opacity: 1;
 }
 
@@ -36,5 +38,17 @@
 }
 
 .movie-card .info {
+    position: absolute;
+    width: 85%;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.movie-card:hover .info{
+    opacity: 1;
 }
