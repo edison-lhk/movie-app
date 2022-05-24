@@ -11,7 +11,7 @@ const MovieList = (props) => {
 
     return (
         <div className="movie-list">
-            {movieCardList}
+            {movieCardList?.length !== 0 ? movieCardList: <h3>No Movies Found</h3>}
         </div>
     );
 };

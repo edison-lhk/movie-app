@@ -9,15 +9,16 @@ import MovieDetails from "./components/MovieDetail/MovieDetails";
 
 const App = () => {
     const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
-    const [movies, setMovies] = useState([]);
+    const [defaultMoviesList, setdefaultMoviesList] = useState([]);
+    const [searchMoviesList, setSearchMoviesList] = useState([]);
  
     useEffect(() => {
         async function fetchMoviesData() {
-            const movieSearchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=Spiderman`;
+            const movieSearchUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
             const request = await fetch(movieSearchUrl);
             const response  = await request.json();
             const moviesList = response.results.filter(movie => movie.poster_path != null && movie.backdrop_path != null);
-            setMovies(() => {
+            setdefaultMoviesList (() => {
                 for (let i = 0; i < moviesList.length; i++) {
                     moviesList[i].key = uniqid();
                 }
@@ -32,13 +33,12 @@ const App = () => {
         const request = await fetch(movieSearchUrl);
         const reponse = await request.json();
         const moviesList = reponse.results.filter(movie => movie.poster_path != null && movie.backdrop_path != null);
-        setMovies(() => {
+        setSearchMoviesList (() => {
             for (let i = 0; i < moviesList.length; i++) {
                 moviesList[i].key = uniqid();
             }
             return moviesList;
         });
-        console.log(moviesList);
     }
     
     
@@ -46,8 +46,8 @@ const App = () => {
         <div className="movie-app-container">
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<><NavBar /><MovieList movies={movies} /></>} />
-                    <Route path="/search-movies" element={<><NavBar /><SearchBar searchMovie={searchMovie} /><MovieList movies={movies} /></>} />
+                    <Route path="/" element={<><NavBar /><MovieList movies={defaultMoviesList} /></>} />
+                    <Route path="/search-movies" element={<><NavBar /><SearchBar searchMovie={searchMovie} /><MovieList movies={searchMoviesList} /></>} />
                     <Route path="/movie/:id" element={<MovieDetails />} />
                 </Routes>
             </BrowserRouter>

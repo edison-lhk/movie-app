@@ -1,18 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
 *, *::before, *::after {
     box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     background-color: black;
     color: white;
+    font-family: 'Lato', sans-serif;
 }
 
 .movie-app-container {
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
 }

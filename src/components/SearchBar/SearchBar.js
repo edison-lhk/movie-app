@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./SearchBar.css";
 
 const SearchBar = (props) => {
     const [movieSearch, setMovieSearch] = useState('');
+
     return (
         <div className="search-bar">
             <form onSubmit={(e) => {
