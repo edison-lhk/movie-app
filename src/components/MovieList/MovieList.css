@@ -1,7 +1,7 @@
 .movie-list {
     display: grid;
     width: 90vw;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(13vw, 1fr));
     justify-items: center;
     padding: 10px;
     align-self: center;
