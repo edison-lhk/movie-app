@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import uniqid from "uniqid";
 import './App.css';
 import NavBar from "./components/NavBar/NavBar";
@@ -44,13 +44,13 @@ const App = () => {
     
     return (
         <div className="movie-app-container">
-            <BrowserRouter>
+            <HashRouter basename="/">
                 <Routes>
                     <Route path="/" element={<><NavBar /><MovieList movies={defaultMoviesList} /></>} />
                     <Route path="/search-movies" element={<><NavBar /><SearchBar searchMovie={searchMovie} /><MovieList movies={searchMoviesList} /></>} />
                     <Route path="/movie/:id" element={<MovieDetails />} />
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </div>
     );
 };
