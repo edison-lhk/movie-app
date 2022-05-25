@@ -16,4 +16,5 @@ body {
     flex-direction: column;
     position: relative;
     overflow-x: hidden;
+    padding-bottom: 15px;
 }

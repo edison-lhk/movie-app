@@ -230,12 +230,12 @@
 }
 
 .recommendations-section {
-    margin: 0 3vw 15px 3vw;
+    margin: auto 3vw;
     padding-bottom: 3vw;
     border-bottom: 1px solid rgb(60, 60, 60);
 }
 
-.recommendations-section h3 {
+.recommendations-section > h3 {
     font-size: 1.8vw;
 }
 
