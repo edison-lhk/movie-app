@@ -7,12 +7,13 @@
     color: red;
     margin-left: 4vw;
     cursor: pointer;
+    font-size: min(32px, 6vw);
 }
 
 .nav-bar ul {
     display: flex;
     align-items: center;
-    gap: 60px;
+    gap: 4.25vw;
     padding: 0;
     margin-right: 5vw;
 }
@@ -20,7 +21,7 @@
 .nav-bar ul .nav-btn {
     list-style-type: none;
     position: relative;
-    font-size: 20px;
+    font-size: min(20px, 4vw);
     cursor: pointer;
 }
 

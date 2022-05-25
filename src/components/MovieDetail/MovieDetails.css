@@ -107,7 +107,7 @@
     gap: 3vw;
     border-bottom: 1px solid rgb(60, 60, 60);
     margin-left: 3vw;
-    padding-bottom: 30px;
+    padding-bottom: 2.15vw;
 }
 
 .details-section .movie-info .detailed-info .metadata {
@@ -219,14 +219,14 @@
     font-size: 1.4vw;
     font-weight: bold;
     margin-bottom: 5px;
-    margin-top: 10px;
+    margin-top: 0.715vw;
 }
 
 .details-section .movie-credits .cast-list .cast-card .cast-info .character, .details-section .movie-credits .crew-list .crew-card .crew-info .job {
     font-size: 1.4vw;
     color: gray;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 0.715vw;
 }
 
 .recommendations-section {
