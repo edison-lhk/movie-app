@@ -1,0 +1,51 @@
+.review-card {
+    margin-bottom: 4vw;
+}
+
+.review-card .review-info {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.review-card .review-info .review-photo {
+    width: 3.5vw;
+    height: 3.5vw;
+}
+
+.review-card .review-info .review-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.review-card .review-info .review-author .name {
+    font-size: 1.6vw;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 0.715vw;
+}
+
+.review-card .review-info .review-author .date {
+    font-size: 1.4vw;
+    color: gray;
+    margin-top: 5px;
+    margin-bottom: 0.715vw;
+}
+
+.review-card .review-info .review-rating {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 1.4vw;
+}
+
+.review-card .review-info .review-rating span {
+    color: gray;
+}
+
+.review-card .review-content {
+    color: gray;
+    font-size: 1.4vw;
+}

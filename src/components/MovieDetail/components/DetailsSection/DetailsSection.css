@@ -1,0 +1,45 @@
+.details-section {
+    display: grid;
+    grid-template-columns: 70vw 20vw;
+    gap: 7.5vw;
+    margin-top: 1.6vw;
+}
+
+.details-section .movie-info .detailed-info{
+    display: flex;
+    gap: 3vw;
+    border-bottom: 1px solid rgb(60, 60, 60);
+    margin-left: 3vw;
+    padding-bottom: 2.15vw;
+}
+
+.details-section .movie-info .detailed-info .metadata {
+    width: 12vw;
+    display: flex;
+}
+
+.details-section .movie-info .detailed-info .metadata p {
+    width: 100%;
+    font-size: 2.8vw;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.details-section .movie-info .detailed-info .overview {
+    width: calc(100% - 12vw);
+}
+
+.details-section .movie-info .detailed-info .overview h3 {
+    font-size: 1.8vw;
+}
+
+.details-section .movie-info .detailed-info .overview p {
+    font-size: 1.45vw;
+    color: gray;
+    line-height: 2.5vw;
+    padding-right: 2vw;
+}
+
+.details-section .movie-credits {
+    width: 20vw;
+}

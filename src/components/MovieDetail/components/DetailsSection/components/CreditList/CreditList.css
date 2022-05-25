@@ -1,0 +1,31 @@
+.credit-list {
+    width: 20vw;
+}
+
+.credit-list.cast {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(60, 60, 60);
+}
+
+.credit-list h3 {
+    font-size: 1.8vw;
+}
+
+.credit-list .credit-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 28vw;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.credit-list .credit-card-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+

@@ -1,0 +1,22 @@
+.recommendations-section {
+    margin: 2vw 3vw auto 3vw;
+    padding-bottom: 3vw;
+    border-bottom: 1px solid rgb(60, 60, 60);
+}
+
+.recommendations-section > h3 {
+    font-size: 1.8vw;
+}
+
+.recommendations-section .recommendations-list {
+    display: flex;
+    gap: 15px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.recommendations-section .recommendations-list::-webkit-scrollbar {
+    display: none;
+}

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
+.hero-section {
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: 25vw 45vw 15vw;
+    justify-content: space-between;
+    align-content: flex-end;
+    grid-gap: 4.285vw;
+    position: relative;
+}
+
+.hero-section > *:not(.material-icons) {
+    margin-top: 15vw;
+}
+
+.hero-section .material-icons {
+    position: absolute;
+    font-size: min(40px, 7vw);
+    cursor: pointer;
+    top: 2.1vw;
+    left: 2.8vw;
+    transition: color 0.2s ease-out;
+}
+
+.hero-section .material-icons:hover {
+    color: lightgray;
+}
+
+.hero-section .poster {
+    height: 35vw;
+    border-radius: 18px;
+    cursor: pointer;
+    margin-bottom: 70px;
+    margin-left: 2.85vw;
+    width: 25vw;
+}
+
+.hero-section .poster img {
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+}
+
+.hero-section .basic-info {
+    align-self: end;
+    margin-bottom: 50px;
+    width: 50vw;
+}
+
+.hero-section .basic-info .movie-title h1 {
+    font-size: 4.3vw;
+    margin-bottom: 20px;
+}
+
+.hero-section .basic-info .movie-quote p {
+    font-size: 2.15vw;
+    color: gray;
+    margin-top: 10px;
+    font-family: 'Kalam', sans-serif;
+}
+
+.hero-section .basic-info .movie-genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4vw;
+    padding: 0;
+}
+
+.hero-section .basic-info .movie-genres li {
+    list-style-type: none;
+    border-radius: 48px;
+    border: 2px solid rgba(255, 255, 255, .6);
+    padding: 0.7vw 2.86vw;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.3vw;
+    transition: background-color 0.2s ease-out;
+}
+
+.hero-section .basic-info .movie-genres li:hover {
+    background-color: rgba(50, 50, 50, .7);
+}
+
+.hero-section .movie-stats {
+    align-self: end;
+    margin-bottom: 5.5vw;
+    font-size: 2.5vw;
+    display: flex;
+    gap: 1vw;
+    width: 15vw;
+}
+
+.hero-section .movie-stats .rating {
+    color: gray;
+}

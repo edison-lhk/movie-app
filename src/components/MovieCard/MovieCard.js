@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./MovieCard.css";
 
 const MovieCard = (props) => {
-    const [movie, setMovie] = useState({genres:[], release_date: '', videos: {results: [{name: '', key: ''}]}, credits: {cast: [], crew: []}, recommendations: {results: []}});
+    const [movie, setMovie] = useState({genres:[], release_date: '', videos: {results: [{name: '', key: ''}]}, credits: {cast: [], crew: []}, reviews: {results: []},recommendations: {results: []}});
     const {title, releaseDate, posterPath, id} = props;
     const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
 
@@ -56,7 +56,7 @@ const MovieCard = (props) => {
     }
 
     return (
-        <Link to={`/movie/${id}`} state={{title: movie.original_title, releaseDate: movie.release_date, quote: movie.tagline, overview: movie.overview, duration: movie.runtime, genres: movie.genres, rating: movie.vote_average, posterPath: movie.poster_path, backdropPath: movie.backdrop_path, trailer: getOfficialTrailerPath(movie), casts: movie.credits.cast, crews: movie.credits.crew, recommendations: movie.recommendations.results}} style={{textDecoration:"none", color: "white"}}>
+        <Link to={`/movie/${id}`} state={{title: movie.original_title, releaseDate: movie.release_date, quote: movie.tagline, overview: movie.overview, duration: movie.runtime, genres: movie.genres, rating: movie.vote_average, posterPath: movie.poster_path, backdropPath: movie.backdrop_path, trailer: getOfficialTrailerPath(movie), casts: movie.credits.cast, crews: movie.credits.crew, reviews: movie.reviews.results, recommendations: movie.recommendations.results}} style={{textDecoration:"none", color: "white"}}>
             <div className="movie-card">
                 <div className="poster">
                     <img src={`https://image.tmdb.org/t/p/w200/${posterPath}`} alt={title}/>
