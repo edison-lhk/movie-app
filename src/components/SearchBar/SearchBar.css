@@ -17,7 +17,7 @@ form input#movie-search{
     position: relative;
     padding: 20px;
     outline: none;
-    font-size: 16px;
+    font-size: min(16px, 3vw);
 }
 
 form button {
@@ -28,6 +28,6 @@ form button {
     color: white;
     right: 8vw;
     cursor: pointer;
-    font-size: 16px;
+    font-size: min(16px, 3.5vw);
 }
 
