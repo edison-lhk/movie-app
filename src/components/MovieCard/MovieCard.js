@@ -16,7 +16,6 @@ const MovieCard = (props) => {
                 response.videos.results = [{name: '', key: ''}];
             };
             setMovie(response);
-            console.log(response);
         }
         fetchMovieDetailsData();
     }, []);

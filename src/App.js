@@ -63,8 +63,8 @@ const App = () => {
     const searchMovie = async (movie) => {
         const movieSearchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${movie}`;
         const request = await fetch(movieSearchUrl);
-        const reponse = await request.json();
-        const moviesList = reponse.results.filter(movie => movie.poster_path != null && movie.backdrop_path != null);
+        const response = await request.json();
+        const moviesList = response.results.filter(movie => movie.poster_path != null && movie.backdrop_path != null);
         setSearchMoviesList (() => {
             for (let i = 0; i < moviesList.length; i++) {
                 moviesList[i].key = uniqid();
