@@ -13,12 +13,12 @@ const ReadMore = (props) => {
                         if (!expand) {
                             setContent(text.slice(500, -1));
                             e.target.style = "color: gray; cursor: auto";
-                            document.querySelector(`p.show-less#id-${id}`).style = "display: block; cursor: pointer; color: white";
+                            document.querySelector(`span.show-less#id-${id}`).style = "display: block; cursor: pointer; color: white; margin-top: 1.5vw;";
                             setExpand(true);
                             changeState(true);
                         } else return;
                     }} style={{cursor: "pointer", color: "white"}}>{content}</span>
-                    <p className="show-less" id={`id-${id}`} onClick={(e) => {
+                    <span className="show-less" id={`id-${id}`} onClick={(e) => {
                         if (expand) {
                             setContent('Read More');
                             e.target.style = "display: none;";
@@ -26,7 +26,7 @@ const ReadMore = (props) => {
                             setExpand(false);
                             changeState(false);
                         } else return;
-                    }} style={{display: "none"}}> Show Less</p>
+                    }} style={{display: "none"}}> Show Less</span>
                 </>
             ) : null}
         </>

@@ -1,11 +1,12 @@
 import React from "react";
+import uniqid from "uniqid";
 import CreditCard from "../CreditCard/CreditCard";
 import "./CreditList.css";
 
 const CreditList = (props) => {
     const {title, creditList, type} = props;
 
-    const creditCardList = creditList.map(credit => <CreditCard name={credit.name} role={credit.character ? credit.character : credit.job} pic={credit.profile_path} key={credit.id}/>);
+    const creditCardList = creditList.map(credit => <CreditCard name={credit.name} role={credit.character ? credit.character : credit.job} pic={credit.profile_path} key={uniqid()}/>);
 
     return (
         <>
