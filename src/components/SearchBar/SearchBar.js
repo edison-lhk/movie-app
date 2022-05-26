@@ -15,7 +15,7 @@ const SearchBar = (props) => {
                     return;
                 }
             }}>
-                <input type="search" autoComplete="off" name="movie-search" id="movie-search" placeholder="Search for a movie, tv show, person....." value={movieSearch} onChange={(e) => setMovieSearch(e.target.value)}/>
+                <input type="search" autoComplete="off" name="movie-search" id="movie-search" placeholder="Search for any movies....." value={movieSearch} onChange={(e) => setMovieSearch(e.target.value)}/>
                 <button type="submit">Search</button>
             </form>
         </div>
