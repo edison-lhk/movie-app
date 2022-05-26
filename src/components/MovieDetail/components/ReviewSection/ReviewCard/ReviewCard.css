@@ -1,5 +1,5 @@
 .review-card {
-    margin-bottom: 4vw;
+    margin-bottom: 3vw;
 }
 
 .review-card .review-info {
@@ -23,14 +23,14 @@
 .review-card .review-info .review-author .name {
     font-size: 1.6vw;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 0.36vw;
     margin-top: 0.715vw;
 }
 
 .review-card .review-info .review-author .date {
     font-size: 1.4vw;
     color: gray;
-    margin-top: 5px;
+    margin-top: 0.36vw;
     margin-bottom: 0.715vw;
 }
 

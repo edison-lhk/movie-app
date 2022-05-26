@@ -20,7 +20,7 @@ const ReviewCard = (props) => {
                 </div>
             </div>
             <div className="review-content">
-                <p>{content.length > 500 ? content.slice(0, 500) + '... ' : content}</p>
+                <p>{content.length > 500 ? content.slice(0, 500) + '... Read More' : content}</p>
             </div>
         </div>
     );

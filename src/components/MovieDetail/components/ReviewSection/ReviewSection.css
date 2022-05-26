@@ -1,6 +1,6 @@
 .review-section {
     width: 90vw;
-    margin: -10px 3vw auto 3vw;
+    margin: -15px 3vw auto 3vw;
     border-bottom: 1px solid rgb(60, 60, 60);
 }
 
@@ -9,5 +9,13 @@
 }
 
 .review-section .review-card-list {
-    margin-top: 3vw;
+    margin-top: 2.5vw;
+}
+
+@media only screen and (min-width: 1000px) {
+
+    .review-section {
+        margin-top: 0;
+    }
+
 }
