@@ -1,5 +1,8 @@
 <h1 align="center">Movie App :popcorn:</h1>
 
+## Description:
+
+A visually-appealing movie app that provides users with a list of popular and top-rated movies' details.
 
 ## Language and Tools:
 
