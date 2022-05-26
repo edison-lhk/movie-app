@@ -10,11 +10,11 @@ const HeroSection = (props) => {
         <div className="hero-section" style={{backgroundImage: `linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8), rgb(0,0,0)), url("https://image.tmdb.org/t/p/w1280/${backgroundImage}")`, backgroundSize: "cover", backgroundRepeat: "no-repeat",}}>
             <span className="material-icons" onClick={() => {naviagate("/");}}>arrow_back</span>
             <div className="poster">
-                <img src={`https://image.tmdb.org/t/p/w400/${poster}`} alt={title}/>
+                {poster !== undefined ? <img src={`https://image.tmdb.org/t/p/w400/${poster}`} alt={title}/> : null}
             </div>
             <div className="basic-info">
                 <div className="movie-title">
-                    <h1>{title} ({releaseDate.slice(0,4)})</h1>
+                    {title !== undefined && releaseDate !== undefined ?  <h1>{title} ({releaseDate})</h1> : null}
                 </div>
                 <div className="movie-quote">
                     <p>{quote}</p>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useLocation} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HeroSection from "./components/HeroSection/HeroSection";
 import DetailsSection from "./components/DetailsSection/DetailsSection";
 import ReviewSection from "./components/ReviewSection/ReviewSection";
@@ -7,14 +7,15 @@ import RecommendationSection from "./components/RecommendationSection/Recommenda
 
 const MovieDetails = () => {
     const [movie, setMovie] = useState({genres:[], release_date: '', videos: {results: [{name: '', key: ''}]}, credits: {cast: [], crew: []}, reviews: {results: []},recommendations: {results: []}});
-    const location = useLocation();
     const API_KEY = process.env.REACT_APP_TMDB_API_KEY;
+    const navigate = useNavigate();
 
     window.scrollTo(0, 0);
 
     useEffect(() => {
         async function fetchMovieDetailsData() {
-            const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${location.state.id}?api_key=${API_KEY}&append_to_response=videos,credits,reviews,recommendations`;
+            const id = window.location.href.split('/').pop();
+            const movieDetailsUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=videos,credits,reviews,recommendations`;
             const request = await fetch(movieDetailsUrl);
             const response = await request.json();
             if (response.videos.results.length === 0) {
@@ -23,7 +24,7 @@ const MovieDetails = () => {
             setMovie(response);
         }
         fetchMovieDetailsData();
-    }, [location.state.id]);
+    }, [navigate]);
 
     const getOfficialTrailerPath = movie => {
         let trailerPath = '';
@@ -63,7 +64,7 @@ const MovieDetails = () => {
     return (
         <div className="movie-details">
             <div className="container">
-                <HeroSection title={movie.original_title} quote={movie.tagline} releaseDate={movie.release_date} genres={movie.genres} rating={movie.vote_average} poster={movie.poster_path} backgroundImage={movie.backdrop_path}/>
+                <HeroSection title={movie.original_title} quote={movie.tagline} releaseDate={movie.release_date.slice(0, 4)} genres={movie.genres} rating={movie.vote_average} poster={movie.poster_path} backgroundImage={movie.backdrop_path}/>
                 <DetailsSection title={movie.original_title} duration={movie.runtime} overview={movie.overview} trailer={getOfficialTrailerPath(movie)} casts={movie.credits.cast} crews={movie.credits.crew} />
                 <ReviewSection reviews={movie.reviews.results} />
                 <RecommendationSection recommendations={movie.recommendations.results} />
