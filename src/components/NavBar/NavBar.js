@@ -1,8 +1,12 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => props.clearSearchMovie(), [navigate]);
 
     return(
         <div className="nav-bar">

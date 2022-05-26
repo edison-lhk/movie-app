@@ -4,11 +4,11 @@ import "./HeroSection.css";
 
 const HeroSection = (props) => {
     const {title, quote, releaseDate, genres, rating, poster, backgroundImage} = props;
-    const naviagate = useNavigate();
+    const navigate = useNavigate();
 
     return (
         <div className="hero-section" style={{backgroundImage: `linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.8), rgb(0,0,0)), url("https://image.tmdb.org/t/p/w1280/${backgroundImage}")`, backgroundSize: "cover", backgroundRepeat: "no-repeat",}}>
-            <span className="material-icons" onClick={() => {naviagate("/");}}>arrow_back</span>
+            <span className="material-icons" onClick={() => {navigate('/');}}>arrow_back</span>
             <div className="poster">
                 {poster !== undefined ? <img src={`https://image.tmdb.org/t/p/w400/${poster}`} alt={title}/> : null}
             </div>

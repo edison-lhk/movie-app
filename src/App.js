@@ -72,6 +72,10 @@ const App = () => {
             return moviesList;
         });
     }
+
+    const clearSearchMovie = () => {
+        setSearchMoviesList([]);
+    };
     
     
     return (
@@ -80,7 +84,7 @@ const App = () => {
                 <Routes>
                     <Route path="/" element={
                             <>
-                                <NavBar />
+                                <NavBar clearSearchMovie={clearSearchMovie}/>
                                 <MovieSectionHeader title="Popular" />
                                 <MovieList movies={popularMoviesList} />
                                 <MovieSectionHeader title="Upcoming" />
@@ -91,8 +95,8 @@ const App = () => {
                         } />
                     <Route path="/search-movies" element={
                         <>
-                            <NavBar />
-                            <SearchBar searchMovie={searchMovie} />
+                            <NavBar clearSearchMovie={clearSearchMovie}/>
+                            <SearchBar searchMovie={searchMovie}/>
                             <MovieList movies={searchMoviesList} />
                         </>
                     } />
