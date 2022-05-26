@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import ReadMore from "./components/ReadMore";
 import "./ReviewCard.css";
 
 const ReviewCard = (props) => {
-    const {name, pic, date, rating, content} = props;
+    const {name, pic, date, rating, content, id} = props;
+    const [readMore, setReadMore] = useState(false);
+
+    const changeReadMoreState = (state) => {
+        setReadMore(state);
+    };
 
     return (
-        <div className="review-card">
+        <div className={`review-card`} id={`id-${id}`}>
             <div className="review-info">
                 <div className="review-photo">
                     <img src={pic !== null ? (pic.includes('https') ? pic.slice(1,-1) : `https://image.tmdb.org/t/p/w200${pic}`) : `https://via.placeholder.com/100x100?text=${name}`} alt={name} />
@@ -20,7 +26,7 @@ const ReviewCard = (props) => {
                 </div>
             </div>
             <div className="review-content">
-                <p>{content.length > 500 ? content.slice(0, 500) + '... Read More' : content}</p>
+                <p>{content.length > 500 ? (!readMore ? content.slice(0, 500) + '... ' : content.slice(0, 500)) : content}<ReadMore text={content} changeState={changeReadMoreState} id={id}/></p>
             </div>
         </div>
     );

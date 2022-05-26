@@ -70,7 +70,7 @@
 .hero-section .basic-info .movie-genres li {
     list-style-type: none;
     border-radius: 48px;
-    border: 2px solid rgba(255, 255, 255, .6);
+    border: 0.14vw solid rgba(255, 255, 255, .6);
     padding: 0.7vw 2.86vw;
     cursor: pointer;
     font-weight: bold;

@@ -1,5 +1,6 @@
 import React from "react";
 import ReviewCard from "./ReviewCard/ReviewCard";
+import uniqid from "uniqid";
 import "./ReviewSection.css";
 
 const ReviewSection = (props) => {
@@ -7,7 +8,7 @@ const ReviewSection = (props) => {
 
     const reviewsList = reviews.filter(review => review.author_details.rating != null);
     const reviewsShortList = reviewsList.length > 3 ? reviewsList.slice(0, 3) : reviewsList;
-    const reviewCardList = reviewsShortList.map(review => <ReviewCard name={review.author} pic={review.author_details.avatar_path} date={review.updated_at.slice(0,10)} rating={review.author_details.rating} content={review.content} />);
+    const reviewCardList = reviewsShortList.map(review => <ReviewCard name={review.author} pic={review.author_details.avatar_path} date={review.updated_at.slice(0,10)} rating={review.author_details.rating} content={review.content} id={review.id}/>);
 
     return (
         <>
