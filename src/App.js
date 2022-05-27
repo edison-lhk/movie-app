@@ -85,12 +85,24 @@ const App = () => {
                     <Route path="/" element={
                             <>
                                 <NavBar clearSearchMovie={clearSearchMovie}/>
-                                <MovieSectionHeader title="Popular" />
-                                <MovieList movies={popularMoviesList} />
-                                <MovieSectionHeader title="Upcoming" />
-                                <MovieList movies={upComingMoviesList} />
-                                <MovieSectionHeader title="Top-Rated" />
-                                <MovieList movies={topRatedMoviesList} />
+                                {popularMoviesList.length !== 0 ? (
+                                    <>
+                                        <MovieSectionHeader title="Popular" />
+                                        <MovieList movies={popularMoviesList} />
+                                    </>
+                                ) : null}
+                                {upComingMoviesList.length !== 0 ? (
+                                    <>
+                                        <MovieSectionHeader title="Upcoming" />
+                                        <MovieList movies={upComingMoviesList} />
+                                    </>
+                                ) : null}
+                                {topRatedMoviesList.length !== 0 ? (
+                                    <>
+                                        <MovieSectionHeader title="Top-Rated" />
+                                        <MovieList movies={topRatedMoviesList} />
+                                    </>
+                                ) : null}
                             </>
                         } />
                     <Route path="/search-movies" element={
